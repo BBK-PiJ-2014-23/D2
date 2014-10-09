@@ -1,0 +1,20 @@
+int input = Integer.parseInt(System.console().readLine());
+
+int primeLower = 0;
+int dividend = input;
+int divisor = input;
+
+boolean foundPrimeLower = false;
+while (!foundPrimeLower) {
+	if (dividend % divisor != 0 || dividend == divisor) {
+		divisor--;
+	} else {
+		dividend--;
+		divisor = dividend;
+	}
+	if (divisor == 1) {
+		foundPrimeLower = true;
+		primeLower = dividend;
+		println(primeLower);
+	}
+}
