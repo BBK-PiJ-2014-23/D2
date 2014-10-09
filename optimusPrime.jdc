@@ -16,7 +16,6 @@ while (!foundPrimeLower) {
 	if (divisor == 1) {
 		foundPrimeLower = true;
 		primeLower = dividend;
-		println(primeLower);
 	}
 }
 
@@ -31,6 +30,14 @@ while (!foundPrimeHigher) {
 	if (divisor == 1) {
 		foundPrimeHigher = true;
 		primeHigher = dividend;
-		println(primeHigher);
 	}
+}
+
+if (input - primeLower < primeHigher - input) {
+	println(primeLower);
+} else if (input - primeLower == primeHigher - input) {
+	println(primeLower);
+	println(primeHigher);
+} else {
+	println(primeHigher);
 }
