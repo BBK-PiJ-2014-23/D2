@@ -1,6 +1,7 @@
 int input = Integer.parseInt(System.console().readLine());
 
 int primeLower = 0;
+int primeHigher = 0;
 int dividend = input;
 int divisor = input;
 
@@ -16,5 +17,20 @@ while (!foundPrimeLower) {
 		foundPrimeLower = true;
 		primeLower = dividend;
 		println(primeLower);
+	}
+}
+
+boolean foundPrimeHigher = false;
+while (!foundPrimeHigher) {
+	if (dividend % divisor != 0 || dividend == divisor) {
+		divisor--;
+	} else {
+		dividend++;
+		divisor = dividend;
+	}
+	if (divisor == 1) {
+		foundPrimeHigher = true;
+		primeHigher = dividend;
+		println(primeHigher);
 	}
 }
